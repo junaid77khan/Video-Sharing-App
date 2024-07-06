@@ -39,7 +39,7 @@ function Login() {
 
       const dataFromServer = await response.json();
 
-      if(!dataFromServer.ok) {
+      if(!dataFromServer.success) {
         setUserErrMessage(dataFromServer?.data?.userError);
         return;
       }

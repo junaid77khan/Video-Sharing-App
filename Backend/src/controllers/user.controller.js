@@ -34,7 +34,6 @@ const registerUser = asyncHandler( async(req, res) => {
     const validation = signUpSchema.safeParse(req.body);
 
     if(!validation.success) {
-        console.log("Inside zod");
         const usernameErrors = validation.error.format().username?._errors || [];
         const fullNameErrors = validation.error.format().fullName?._errors || [];
         const emailErrors = validation.error.format().email?._errors || [];
@@ -69,8 +68,6 @@ const registerUser = asyncHandler( async(req, res) => {
             //     }
             // )
     }
-
-    console.log("outside zod");
     
     if(
         [username, email, fullName, password].some( (field) => field?.trim === "" )

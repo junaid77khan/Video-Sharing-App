@@ -50,7 +50,7 @@ function Register() {
 
       const dataFromServer = await response.json();
 
-      if(!dataFromServer.ok) {
+      if(!dataFromServer.success) {
         setUsernameErrMessage(dataFromServer?.data?.usernameError);
         setFullNameErrMessage(dataFromServer?.data?.fullNameError);
         setEmailErrMessage(dataFromServer?.data?.emailError);
